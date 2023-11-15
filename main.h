@@ -18,5 +18,8 @@ char **tokenizer(char *lineptr, char *delim);
 char **wrapper_func(void);
 ssize_t _getline(char **lineptr, size_t *n, int fd);
 ssize_t _read(char *buffer, int fd, size_t *n);
+int _strcmp(const char *a1, const char *a2)
+int _strlen(const char *a)
+char *_strcat(char *dest, const char *src)
 
 #endif
