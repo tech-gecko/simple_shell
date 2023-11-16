@@ -36,12 +36,12 @@ char **tokenizer(char *lineptr, char *delim)
 	int count = 0;
 	char **command = malloc(20 * sizeof(char *));
 
-	token = strtok(lineptr, delim);
+	token = _strtok(lineptr, delim);
 	command[0] = token;
 
 	while (token != NULL)
 	{
-		token = strtok(NULL, delim);
+		token = _strtok(NULL, delim);
 		command[++count] = token;
 	}
 

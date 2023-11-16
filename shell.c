@@ -1,15 +1,13 @@
 #include "main.h"
 /**
  * main - Program that emulates a simple shell.
- * argc: Argument count.
- * argv: Argument vector.
  *
  * Return: Always 0 (success).
  */
-int main(int argc, char *argv[])
+int main(void)
 {
 	char *envp[] = {NULL};
-	(void)argc;
+	char **argv;
 
 	/* Creates an infinite loop so the shell never ends*/
 	while (1)
@@ -20,6 +18,10 @@ int main(int argc, char *argv[])
 		{
 			return (0);
 		}
+
+		/* Implements exit command.*/
+		if (_strcmp(argv[0], "exit") == 0)
+			break;
 
 		/* Executes the command.*/
 		if (argv[0][0] != '~' && argv[0][0] != '/' && argv[0][0] != '.')
